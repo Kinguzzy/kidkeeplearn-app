@@ -1,0 +1,208 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sign In · KidKeep Learn</title><link rel="icon" href="kidkeep-mark.png"><script src="config.js"></script><style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f7f9fc;color:#17212b}.page{min-height:100vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(430px,.95fr)}.brand{background:#0f2742;color:white;padding:48px;display:flex;flex-direction:column;justify-content:space-between}.brand img{width:190px;filter:brightness(0) invert(1)}.brand h1{font-size:clamp(42px,5vw,64px);line-height:1.03;letter-spacing:-.045em;max-width:650px;margin:0 0 18px}.brand p{max-width:610px;color:#c8d5e3;font-size:17px;line-height:1.7}.bullets{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:590px;margin-top:28px}.bullet{border:1px solid rgba(255,255,255,.14);border-radius:9px;padding:12px 14px;font-size:13px;color:#e7eef7}.auth{background:#fff;display:flex;align-items:center;justify-content:center;padding:40px}.card{width:min(100%,430px)}.mobileLogo{display:none;width:180px;margin-bottom:26px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:#1e63d8;margin-bottom:12px}.card h2{font-size:32px;letter-spacing:-.035em;margin:0 0 8px;color:#10263e}.sub{color:#667085;margin:0 0 24px;line-height:1.55}.field{margin:14px 0}.field label{display:block;margin-bottom:7px;font-size:13px;font-weight:800;color:#344054}.field input{width:100%;height:48px;border:1px solid #cfd7e3;border-radius:8px;padding:0 13px;background:#fff;color:#101828;font-size:15px;outline:none}.field input:focus{border-color:#1e63d8;box-shadow:0 0 0 3px rgba(30,99,216,.11)}.terms{display:flex;gap:9px;align-items:flex-start;font-size:12px;color:#667085;line-height:1.5;margin:16px 0}.terms input{margin-top:2px}.btn{width:100%;height:48px;border:0;border-radius:8px;background:#1e63d8;color:#fff;font-weight:850;cursor:pointer;font-size:14px}.btn:hover{background:#1958c0}.btn:disabled{opacity:.6;cursor:wait}.switch{text-align:center;margin-top:17px;font-size:13px;color:#667085}.linkbtn{border:0;background:none;color:#1e63d8;font-weight:800;cursor:pointer}.message{display:none;padding:11px 12px;border-radius:8px;font-size:13px;margin-bottom:14px;background:#fef3f2;color:#b42318}.message.ok{background:#ecfdf3;color:#027a48}.demo{margin-top:24px;border-top:1px solid #e7ecf2;padding-top:22px}.demoTitle{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.demoTitle b{font-size:13px}.demoTitle span{font-size:11px;color:#667085}.demoGrid{display:grid;gap:8px}.demoBtn{display:flex;align-items:center;justify-content:space-between;width:100%;border:1px solid #dfe5ed;background:#fff;border-radius:8px;padding:11px 12px;cursor:pointer;text-align:left}.demoBtn:hover{border-color:#a9bfdc;background:#f8fbff}.demoBtn b{font-size:13px;color:#172b43}.demoBtn small{color:#667085}.hide{display:none!important}@media(max-width:900px){.page{display:block}.brand{display:none}.auth{min-height:100vh;padding:28px 20px}.mobileLogo{display:block}}
+
+/* V81 readability + overlap hardening */
+html{font-size:17px} body{line-height:1.55} h1{font-size:clamp(2rem,3vw,2.65rem)!important;line-height:1.12!important} h2{font-size:clamp(1.55rem,2.2vw,2rem)!important;line-height:1.2!important} h3{font-size:1.25rem!important;line-height:1.25!important} p,li,td,th,label,input,select,textarea,button{font-size:1rem!important} small,.muted,.meta{font-size:.875rem!important;line-height:1.4!important}.content{min-width:0}.card,.panel,.stat,.row,.tableWrap{min-width:0} .grid{gap:20px!important}.topbar{min-height:84px;height:auto!important;gap:18px;flex-wrap:wrap}.crumb,.topActions{min-width:0}.topActions{flex-wrap:wrap}.nav a,.nav button{min-height:44px;line-height:1.25!important;white-space:normal!important}.sidebar{overflow-y:auto}.content *{overflow-wrap:anywhere}.tableWrap{overflow-x:auto}.tableWrap table,table{min-width:720px}.modal{max-height:88vh;overflow:auto}.modalBody{overflow:visible!important}input,select,textarea{min-height:46px}button,.btn{min-height:44px;padding:.7rem 1rem!important}.stat b,.metric b{line-height:1.1!important}@media(max-width:900px){html{font-size:16px}.content{padding:22px!important}.topbar{padding:14px 18px!important}.grid{grid-template-columns:1fr!important}table{min-width:680px}}
+</style><style>
+:root{--kk-navy:#102f46;--kk-teal:#16877f;--kk-cream:#fffdf9;--kk-line:#e8ece9}
+body{background:var(--kk-cream)!important;color:#334b59!important}button,.primary,.btn-primary{border-radius:6px!important}input,select,textarea{border-radius:6px!important}.card,.panel,.authCard{border-radius:8px!important;box-shadow:0 10px 30px rgba(24,52,70,.055)!important}a{color:var(--kk-teal)}
+</style>
+<style id="kkl-exact-dashboard-palette-v88">
+:root{
+  --kk-sidebar:#102f46;
+  --kk-navy:#17364d;
+  --kk-navy-deep:#102d43;
+  --kk-active:#28516a;
+  --kk-accent:#52c6b8;
+  --kk-teal:#16877f;
+  --kk-teal-hover:#116d67;
+  --kk-kicker:#438f86;
+  --kk-cream:#fffdf9;
+  --kk-ink:#253c4c;
+  --kk-text:#415563;
+  --kk-muted:#7b8b96;
+  --kk-line:#e8ece9;
+}
+body{background:var(--kk-cream)!important;color:var(--kk-text)!important}
+/* Primary actions: match effective dashboard accent */
+.btn-primary,.primary,.cta-primary,button.primary,a.primary,
+button[type="submit"],.plan-card .btn,.pricing-card .btn,
+.hero .btn:first-of-type,.nav-cta,.start-trial{
+  background:var(--kk-teal)!important;
+  border-color:var(--kk-teal)!important;
+  color:#fff!important;
+}
+.btn-primary:hover,.primary:hover,.cta-primary:hover,button.primary:hover,a.primary:hover,
+button[type="submit"]:hover,.plan-card .btn:hover,.pricing-card .btn:hover,
+.hero .btn:first-of-type:hover,.nav-cta:hover,.start-trial:hover{
+  background:var(--kk-teal-hover)!important;
+  border-color:var(--kk-teal-hover)!important;
+}
+/* Secondary actions */
+.btn-secondary,.secondary,.cta-secondary,.demo-link,.schedule-demo,.explore-demo{
+  background:transparent!important;
+  color:var(--kk-navy)!important;
+  border-color:#cfd8dc!important;
+}
+/* Dark panels / login art */
+.auth-art,.signin-left,.login-left,.split-left,.dark-section,.workflow-section,.hero-dark,
+section.dark,.dark-panel{
+  background:var(--kk-sidebar)!important;
+  color:#fff!important;
+}
+/* Typography and small accents */
+.eyebrow,.kicker,.section-kicker,.overline,.label-accent{color:var(--kk-kicker)!important}
+a{color:var(--kk-teal)}
+a:hover{color:var(--kk-teal-hover)}
+input:focus,select:focus,textarea:focus{border-color:var(--kk-accent)!important;box-shadow:0 0 0 3px rgba(82,198,184,.14)!important}
+/* Pricing/selection visuals */
+.plan-card,.pricing-card{border-color:var(--kk-line)!important;background:#fff!important}
+.plan-card.featured,.pricing-card.featured,.plan-card.selected,.pricing-card.selected{
+  border-color:var(--kk-active)!important;
+  box-shadow:0 0 0 1px var(--kk-active),0 10px 24px rgba(16,47,70,.08)!important;
+}
+/* Dashboard-preview mockup colors */
+.mock-sidebar,.app-preview .sidebar,.product-preview .sidebar,.preview-sidebar{background:var(--kk-sidebar)!important}
+.mock-active,.app-preview .active,.product-preview .active,.preview-active{
+  background:var(--kk-active)!important;
+  box-shadow:inset 3px 0 var(--kk-accent)!important;
+}
+/* Override known old public-page color variables */
+:root{--kk-navy:#17364d!important;--kk-teal:#16877f!important;--kk-cream:#fffdf9!important;--kk-line:#e8ece9!important}
+</style>
+
+
+<style id="v91-final-unified-brand-system">
+:root{
+  --kkl-side-top:#173a57;
+  --kkl-side-mid:#102f49;
+  --kkl-side-bottom:#081e30;
+  --kkl-active-start:#238ba2;
+  --kkl-active-end:#5aaec0;
+  --kkl-active-accent:#4fd2c3;
+  --kkl-active-hover-start:#1f7d92;
+  --kkl-active-hover-end:#4a9daf;
+  --kkl-secondary-border:#c7d7dc;
+  --kkl-secondary-bg:#ffffff;
+  --kkl-secondary-text:#287f9c;
+}
+/* One exact active/primary treatment across the entire product. */
+html body .navBtn.active,
+html body .sidebar .navBtn.active{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  color:#fff!important;
+  box-shadow:inset 4px 0 0 var(--kkl-active-accent)!important;
+  border-color:transparent!important;
+}
+html body .navBtn.active:hover,
+html body .sidebar .navBtn.active:hover{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  color:#fff!important;
+}
+html body .btn.primary,
+html body a.btn.primary,
+html body button.btn.primary,
+html body .btn-primary,
+html body button[type="submit"],
+html body #submit,
+html body .start-trial,
+html body .nav-cta,
+html body .price .btn.primary,
+html body .plan-card .btn.primary,
+html body .pricing-card .btn.primary{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  border-color:var(--kkl-active-start)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+html body .btn.primary:hover,
+html body a.btn.primary:hover,
+html body button.btn.primary:hover,
+html body .btn-primary:hover,
+html body button[type="submit"]:hover,
+html body #submit:hover,
+html body .start-trial:hover,
+html body .nav-cta:hover,
+html body .price .btn.primary:hover{
+  background:linear-gradient(100deg,var(--kkl-active-hover-start) 0%,var(--kkl-active-hover-end) 100%)!important;
+  border-color:var(--kkl-active-hover-start)!important;
+  color:#fff!important;
+}
+/* Secondary actions are never green/blue filled. */
+html body .btn.ghost,
+html body a.btn.ghost,
+html body .btn.secondary,
+html body .btn-secondary,
+html body .explore-demo,
+html body .schedule-demo{
+  background:var(--kkl-secondary-bg)!important;
+  border-color:var(--kkl-secondary-border)!important;
+  color:var(--kkl-secondary-text)!important;
+}
+html body .btn.ghost:hover,
+html body a.btn.ghost:hover,
+html body .btn.secondary:hover,
+html body .btn-secondary:hover{
+  background:#f3f9fa!important;
+  border-color:#91bac5!important;
+  color:#206d88!important;
+}
+/* Authentication uses the same exact primary color as the clicked dashboard item. */
+html body .auth .btn,
+html body .card #submit{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  border-color:var(--kkl-active-start)!important;
+  color:#fff!important;
+}
+html body .auth .btn:hover,
+html body .card #submit:hover{
+  background:linear-gradient(100deg,var(--kkl-active-hover-start) 0%,var(--kkl-active-hover-end) 100%)!important;
+}
+html body .linkbtn,html body .eyebrow,html body .kicker{color:var(--kkl-secondary-text)!important}
+/* All dark brand panels use the dashboard sidebar gradient. */
+html body .sidebar,
+html body .brand,
+html body .band,
+html body .preview,
+html body .side,
+html body .mock-sidebar,
+html body .preview-sidebar{
+  background:linear-gradient(155deg,var(--kkl-side-top) 0%,var(--kkl-side-mid) 50%,var(--kkl-side-bottom) 100%)!important;
+}
+/* Preview selected row mirrors real dashboard selected row. */
+html body .sideLine.active,
+html body .mock-active,
+html body .preview-active,
+html body .mock-sidebar .active,
+html body .preview-sidebar .active{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  box-shadow:inset 4px 0 0 var(--kkl-active-accent)!important;
+}
+/* Selected pricing card uses the same family, without inventing another teal. */
+html body .price.reco,
+html body .plan-card.featured,
+html body .pricing-card.featured{border-color:var(--kkl-active-start)!important}
+</style>
+
+<link rel="stylesheet" href="mobile-native.css"></head><body><div class="page"><section class="brand"><img src="kidkeep-logo.png" alt="KidKeep Learn"><div><div class="eyebrow" style="color:#80b1ff">Childcare management software</div><h1>Everything your childcare program needs, in one secure platform.</h1><p>Manage daily operations, support your staff, stay connected with families, and keep essential records organized—all from KidKeep Learn.</p><div class="bullets"><div class="bullet">Secure role-based access</div><div class="bullet">Daily care & attendance</div><div class="bullet">Family engagement</div><div class="bullet">Billing & compliance tools</div></div></div><small style="color:#8092a6">© 2026 KidKeep Learn</small></section><main class="auth"><section class="card"><img class="mobileLogo" src="kidkeep-logo.png" alt="KidKeep Learn"><div class="eyebrow">Secure access</div><h2 id="title">Welcome back</h2><p class="sub" id="subtitle">Sign in to your KidKeep Learn account.</p><div id="planNotice" class="message ok" style="display:none"></div><div id="message" class="message"></div><form id="form"><div id="programField" class="field hide"><label for="program">Program name</label><input id="program" autocomplete="organization"></div><div id="nameField" class="field hide"><label for="name">Your name</label><input id="name" autocomplete="name"></div><div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="email" required></div><div class="field"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required minlength="6"></div><label class="terms"><input id="terms" type="checkbox" required><span>I agree to the Terms of Service and acknowledge the Privacy Policy.</span></label><button id="submit" class="btn" type="submit">Sign In</button></form><div class="switch"><span id="switchCopy">Don't have an account?</span> <button id="switchBtn" class="linkbtn" type="button">Create Account</button></div><div class="demo" id="demo"><div class="demoTitle"><b>Explore the product</b><span>Demo data included</span></div><div class="demoGrid"><button class="demoBtn" data-role="admin"><span><b>Program Administrator</b><br><small>Full operations and management</small></span><span>→</span></button><button class="demoBtn" data-role="staff"><span><b>Teacher / Staff</b><br><small>Classroom and daily care</small></span><span>→</span></button><button class="demoBtn" data-role="family"><span><b>Family</b><br><small>Child updates, messages and documents</small></span><span>→</span></button></div></div></section></main></div><script id="kkl-v102-signin-route-fix">
+(function(){
+  var q=new URLSearchParams(location.search);
+  var plan=q.get('plan');
+  if(plan){
+    try{ localStorage.setItem('kidkeep_selected_plan', plan); }catch(_){}
+    var notice=document.getElementById('planNotice');
+    if(notice){ notice.textContent=(plan==='center'?'Center':'Daycare')+' plan selected. Create your Program Owner account to continue.'; notice.style.display='block'; }
+  }
+  if(q.get('demo')==='1'){
+    setTimeout(function(){ var d=document.getElementById('demo'); if(d) d.scrollIntoView({behavior:'smooth',block:'center'}); },80);
+  }
+})();
+</script>
+<script>
+(()=>{const cfg=window.KIDKEEP_CONFIG||{};const $=id=>document.getElementById(id);let signup=new URLSearchParams(location.search).get('mode')==='signup';const msg=(text,ok=false)=>{const m=$('message');m.textContent=text;m.className='message'+(ok?' ok':'');m.style.display='block'};function render(){ $('title').textContent=signup?'Create your program':'Welcome back';$('subtitle').textContent=signup?'Set up the Program Owner account to get started.':'Sign in to your KidKeep Learn account.';$('submit').textContent=signup?'Create Account':'Sign In';$('switchCopy').textContent=signup?'Already have an account?':"Don't have an account?";$('switchBtn').textContent=signup?'Sign In':'Create Account';$('programField').classList.toggle('hide',!signup);$('nameField').classList.toggle('hide',!signup);$('password').autocomplete=signup?'new-password':'current-password'}render();$('switchBtn').onclick=()=>{signup=!signup;$('message').style.display='none';render()};document.querySelectorAll('.demoBtn').forEach(b=>b.onclick=()=>{const role=b.dataset.role;const session={demo:true,role,user:{id:'demo-'+role,email:role+'@demo.kidkeep',name:role==='admin'?'Jordan Ellis':role==='staff'?'Maya Thompson':'Avery Brooks'},organization:{id:'demo-org',name:'Little Harbor Learning Center'}};localStorage.setItem('kidkeep_session',JSON.stringify(session));location.href='app.html'});$('form').addEventListener('submit',async e=>{e.preventDefault();$('message').style.display='none';if(!$('terms').checked){msg('Please accept the Terms and Privacy Policy to continue.');return}const email=$('email').value.trim(),password=$('password').value;const btn=$('submit');btn.disabled=true;btn.textContent=signup?'Creating…':'Signing in…';try{if(!cfg.supabaseUrl||!cfg.supabaseAnonKey)throw new Error('Production backend configuration is missing.');if(signup){const r=await fetch(cfg.supabaseUrl+'/auth/v1/signup',{method:'POST',headers:{'apikey':cfg.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({email,password,data:{full_name:$('name').value.trim(),program_name:$('program').value.trim(),role:'program_owner'}})});const data=await r.json();if(!r.ok)throw new Error(data.msg||data.message||'Unable to create account.');if(!data.access_token){msg('Account created. Check your email to confirm your address, then sign in.',true);signup=false;render();return}await finish(data)}else{const r=await fetch(cfg.supabaseUrl+'/auth/v1/token?grant_type=password',{method:'POST',headers:{'apikey':cfg.supabaseAnonKey,'Content-Type':'application/json'},body:JSON.stringify({email,password})});const data=await r.json();if(!r.ok)throw new Error(data.error_description||data.msg||data.message||'Email or password is incorrect.');await finish(data)}}catch(err){msg(err.message||'Unable to continue.')}finally{btn.disabled=false;render()}});async function finish(auth){let profile=null,org=null;try{const h={'apikey':cfg.supabaseAnonKey,'Authorization':'Bearer '+auth.access_token};const p=await fetch(cfg.supabaseUrl+'/rest/v1/profiles?select=*&id=eq.'+encodeURIComponent(auth.user.id),{headers:h});if(p.ok){const a=await p.json();profile=a[0]||null}if(profile?.organization_id){const o=await fetch(cfg.supabaseUrl+'/rest/v1/organizations?select=*&id=eq.'+encodeURIComponent(profile.organization_id),{headers:h});if(o.ok){const a=await o.json();org=a[0]||null}}}catch{}const raw=(profile?.role||auth.user?.user_metadata?.role||'program_owner').toLowerCase();const role=raw.includes('guardian')||raw.includes('family')?'family':raw.includes('staff')||raw.includes('assistant')||raw.includes('teacher')||raw.includes('substitute')?'staff':'admin';localStorage.setItem('kidkeep_session',JSON.stringify({demo:false,role,auth:{access_token:auth.access_token,refresh_token:auth.refresh_token,expires_at:Date.now()+((auth.expires_in||3600)*1000)},user:{id:auth.user.id,email:auth.user.email,name:profile?.full_name||auth.user?.user_metadata?.full_name||auth.user.email.split('@')[0]},profile,organization:org||{id:profile?.organization_id,name:'My Program'}}));location.href='app.html'}
+})();
+</script></body></html>
+<style id="v89-visual-master">
+:root{--v89-side-top:#173a57;--v89-side-mid:#102f49;--v89-side-bottom:#081e30;--v89-active-a:#238ba2;--v89-active-b:#5aaec0;--v89-accent:#4fd2c3;--v89-cta:#287f9c;--v89-cta-hover:#206d88}
+.brand{background:linear-gradient(155deg,var(--v89-side-top) 0%,var(--v89-side-mid) 48%,var(--v89-side-bottom) 100%)!important}.btn{background:linear-gradient(100deg,var(--v89-active-a),var(--v89-active-b))!important}.btn:hover{background:linear-gradient(100deg,var(--v89-cta-hover),var(--v89-cta))!important}.eyebrow,.linkbtn{color:var(--v89-cta)!important}.field input:focus{border-color:var(--v89-accent)!important;box-shadow:0 0 0 3px rgba(79,210,195,.14)!important}.demoBtn:hover{border-color:#8fc1cc!important;background:#f3f9fa!important}
+</style>

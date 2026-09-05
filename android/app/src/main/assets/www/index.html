@@ -1,0 +1,323 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>KidKeep Learn — Childcare Operations</title><meta name="description" content="Childcare operations software for attendance, families, staff, billing, compliance and daily care."><link rel="icon" href="kidkeep-mark.png"><link rel="manifest" href="manifest.webmanifest"><style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#17212b;background:#fff}.wrap{width:min(1160px,calc(100% - 40px));margin:auto}.nav{height:74px;display:flex;align-items:center;justify-content:space-between}.nav img{width:178px;height:auto}.navlinks{display:flex;gap:26px;align-items:center}.nav a{text-decoration:none;color:#344054;font-size:14px;font-weight:700}.btn{display:inline-flex;align-items:center;justify-content:center;height:44px;padding:0 18px;border-radius:9px;text-decoration:none!important;font-weight:800!important}.btn.primary{background:#1e63d8;color:#fff!important}.btn.ghost{border:1px solid #d8dee8;background:#fff}.hero{padding:86px 0 76px;background:linear-gradient(180deg,#fbfcfe 0,#f5f8fc 100%);border-top:1px solid #eef2f6;border-bottom:1px solid #e7ecf2}.heroGrid{display:grid;grid-template-columns:1.03fr .97fr;gap:68px;align-items:center}.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:900;color:#1e63d8}.hero h1{font-size:clamp(44px,5vw,66px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 20px;color:#10263e}.hero p{font-size:18px;line-height:1.7;color:#526171;max-width:630px}.actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.trust{display:flex;gap:22px;margin-top:30px;color:#667085;font-size:13px;font-weight:700}.preview{background:#0f2742;border-radius:18px;padding:14px;box-shadow:0 28px 80px rgba(15,39,66,.16)}.screen{background:#f7f9fc;border-radius:11px;overflow:hidden}.screenTop{height:40px;background:#fff;border-bottom:1px solid #e7ecf2;display:flex;align-items:center;gap:7px;padding:0 13px}.dot{width:8px;height:8px;border-radius:50%;background:#d0d5dd}.screenBody{display:grid;grid-template-columns:128px 1fr;min-height:365px}.side{background:#102a46;padding:15px 10px}.sideLine{height:24px;border-radius:6px;background:rgba(255,255,255,.09);margin-bottom:8px}.sideLine.active{background:#1e63d8}.content{padding:20px}.miniTitle{height:16px;width:170px;background:#cbd5e1;border-radius:3px;margin-bottom:16px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.stat{height:76px;background:#fff;border:1px solid #e7ecf2;border-radius:9px}.panel{height:160px;background:#fff;border:1px solid #e7ecf2;border-radius:9px;margin-top:12px}.section{padding:92px 0}.sectionHead{max-width:720px;margin-bottom:44px}.section h2{font-size:38px;letter-spacing:-.035em;color:#10263e;margin:0 0 12px}.section p{color:#667085;line-height:1.7}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{border:1px solid #e4e9f0;border-radius:12px;padding:25px;background:#fff}.feature b{display:block;font-size:17px;color:#172b43;margin-bottom:8px}.feature p{font-size:14px;margin:0}.band{background:#10263e;color:#fff}.band h2{color:#fff}.band p{color:#cbd5e1}.workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:20px;border:1px solid rgba(255,255,255,.15);border-radius:10px}.num{color:#7fb0ff;font-weight:900;font-size:12px;margin-bottom:10px}.pricing{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:780px}.price{border:1px solid #dfe5ed;border-radius:14px;padding:28px}.price.reco{border:2px solid #1e63d8}.price h3{margin:0}.amount{font-size:36px;font-weight:900;color:#10263e;margin:15px 0 4px}.price ul{padding-left:18px;color:#526171;line-height:2}.cta{padding:70px 0}.ctaBox{background:#f3f7fd;border:1px solid #dce7f7;border-radius:18px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:30px}.footer{border-top:1px solid #e7ecf2;padding:28px 0;color:#667085;font-size:13px}.footer .wrap{display:flex;justify-content:space-between;gap:20px}.footer a{color:#526171;text-decoration:none}@media(max-width:850px){.navlinks a:not(.btn){display:none}.heroGrid{grid-template-columns:1fr}.preview{display:none}.grid3,.workflow,.pricing{grid-template-columns:1fr}.section{padding:65px 0}.ctaBox{display:block}.ctaBox .actions{margin-top:20px}.footer .wrap{display:block}.footer span{display:block;margin-top:8px}}
+
+/* V81 readability + overlap hardening */
+html{font-size:17px} body{line-height:1.55} h1{font-size:clamp(2rem,3vw,2.65rem)!important;line-height:1.12!important} h2{font-size:clamp(1.55rem,2.2vw,2rem)!important;line-height:1.2!important} h3{font-size:1.25rem!important;line-height:1.25!important} p,li,td,th,label,input,select,textarea,button{font-size:1rem!important} small,.muted,.meta{font-size:.875rem!important;line-height:1.4!important}.content{min-width:0}.card,.panel,.stat,.row,.tableWrap{min-width:0} .grid{gap:20px!important}.topbar{min-height:84px;height:auto!important;gap:18px;flex-wrap:wrap}.crumb,.topActions{min-width:0}.topActions{flex-wrap:wrap}.nav a,.nav button{min-height:44px;line-height:1.25!important;white-space:normal!important}.sidebar{overflow-y:auto}.content *{overflow-wrap:anywhere}.tableWrap{overflow-x:auto}.tableWrap table,table{min-width:720px}.modal{max-height:88vh;overflow:auto}.modalBody{overflow:visible!important}input,select,textarea{min-height:46px}button,.btn{min-height:44px;padding:.7rem 1rem!important}.stat b,.metric b{line-height:1.1!important}@media(max-width:900px){html{font-size:16px}.content{padding:22px!important}.topbar{padding:14px 18px!important}.grid{grid-template-columns:1fr!important}table{min-width:680px}}
+</style><style>
+:root{--kk-navy:#102f46;--kk-teal:#16877f;--kk-cream:#fffdf9;--kk-line:#e8ece9}
+body{background:var(--kk-cream)!important;color:#334b59!important}button,.primary,.btn-primary{border-radius:6px!important}input,select,textarea{border-radius:6px!important}.card,.panel,.authCard{border-radius:8px!important;box-shadow:0 10px 30px rgba(24,52,70,.055)!important}a{color:var(--kk-teal)}
+</style>
+<style id="kkl-exact-dashboard-palette-v88">
+:root{
+  --kk-sidebar:#102f46;
+  --kk-navy:#17364d;
+  --kk-navy-deep:#102d43;
+  --kk-active:#28516a;
+  --kk-accent:#52c6b8;
+  --kk-teal:#16877f;
+  --kk-teal-hover:#116d67;
+  --kk-kicker:#438f86;
+  --kk-cream:#fffdf9;
+  --kk-ink:#253c4c;
+  --kk-text:#415563;
+  --kk-muted:#7b8b96;
+  --kk-line:#e8ece9;
+}
+body{background:var(--kk-cream)!important;color:var(--kk-text)!important}
+/* Primary actions: match effective dashboard accent */
+.btn-primary,.primary,.cta-primary,button.primary,a.primary,
+button[type="submit"],.plan-card .btn,.pricing-card .btn,
+.hero .btn:first-of-type,.nav-cta,.start-trial{
+  background:var(--kk-teal)!important;
+  border-color:var(--kk-teal)!important;
+  color:#fff!important;
+}
+.btn-primary:hover,.primary:hover,.cta-primary:hover,button.primary:hover,a.primary:hover,
+button[type="submit"]:hover,.plan-card .btn:hover,.pricing-card .btn:hover,
+.hero .btn:first-of-type:hover,.nav-cta:hover,.start-trial:hover{
+  background:var(--kk-teal-hover)!important;
+  border-color:var(--kk-teal-hover)!important;
+}
+/* Secondary actions */
+.btn-secondary,.secondary,.cta-secondary,.demo-link,.schedule-demo,.explore-demo{
+  background:transparent!important;
+  color:var(--kk-navy)!important;
+  border-color:#cfd8dc!important;
+}
+/* Dark panels / login art */
+.auth-art,.signin-left,.login-left,.split-left,.dark-section,.workflow-section,.hero-dark,
+section.dark,.dark-panel{
+  background:var(--kk-sidebar)!important;
+  color:#fff!important;
+}
+/* Typography and small accents */
+.eyebrow,.kicker,.section-kicker,.overline,.label-accent{color:var(--kk-kicker)!important}
+a{color:var(--kk-teal)}
+a:hover{color:var(--kk-teal-hover)}
+input:focus,select:focus,textarea:focus{border-color:var(--kk-accent)!important;box-shadow:0 0 0 3px rgba(82,198,184,.14)!important}
+/* Pricing/selection visuals */
+.plan-card,.pricing-card{border-color:var(--kk-line)!important;background:#fff!important}
+.plan-card.featured,.pricing-card.featured,.plan-card.selected,.pricing-card.selected{
+  border-color:var(--kk-active)!important;
+  box-shadow:0 0 0 1px var(--kk-active),0 10px 24px rgba(16,47,70,.08)!important;
+}
+/* Dashboard-preview mockup colors */
+.mock-sidebar,.app-preview .sidebar,.product-preview .sidebar,.preview-sidebar{background:var(--kk-sidebar)!important}
+.mock-active,.app-preview .active,.product-preview .active,.preview-active{
+  background:var(--kk-active)!important;
+  box-shadow:inset 3px 0 var(--kk-accent)!important;
+}
+/* Override known old public-page color variables */
+:root{--kk-navy:#17364d!important;--kk-teal:#16877f!important;--kk-cream:#fffdf9!important;--kk-line:#e8ece9!important}
+</style>
+
+
+<style id="v91-final-unified-brand-system">
+:root{
+  --kkl-side-top:#173a57;
+  --kkl-side-mid:#102f49;
+  --kkl-side-bottom:#081e30;
+  --kkl-active-start:#238ba2;
+  --kkl-active-end:#5aaec0;
+  --kkl-active-accent:#4fd2c3;
+  --kkl-active-hover-start:#1f7d92;
+  --kkl-active-hover-end:#4a9daf;
+  --kkl-secondary-border:#c7d7dc;
+  --kkl-secondary-bg:#ffffff;
+  --kkl-secondary-text:#287f9c;
+}
+/* One exact active/primary treatment across the entire product. */
+html body .navBtn.active,
+html body .sidebar .navBtn.active{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  color:#fff!important;
+  box-shadow:inset 4px 0 0 var(--kkl-active-accent)!important;
+  border-color:transparent!important;
+}
+html body .navBtn.active:hover,
+html body .sidebar .navBtn.active:hover{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  color:#fff!important;
+}
+html body .btn.primary,
+html body a.btn.primary,
+html body button.btn.primary,
+html body .btn-primary,
+html body button[type="submit"],
+html body #submit,
+html body .start-trial,
+html body .nav-cta,
+html body .price .btn.primary,
+html body .plan-card .btn.primary,
+html body .pricing-card .btn.primary{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  border-color:var(--kkl-active-start)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+html body .btn.primary:hover,
+html body a.btn.primary:hover,
+html body button.btn.primary:hover,
+html body .btn-primary:hover,
+html body button[type="submit"]:hover,
+html body #submit:hover,
+html body .start-trial:hover,
+html body .nav-cta:hover,
+html body .price .btn.primary:hover{
+  background:linear-gradient(100deg,var(--kkl-active-hover-start) 0%,var(--kkl-active-hover-end) 100%)!important;
+  border-color:var(--kkl-active-hover-start)!important;
+  color:#fff!important;
+}
+/* Secondary actions are never green/blue filled. */
+html body .btn.ghost,
+html body a.btn.ghost,
+html body .btn.secondary,
+html body .btn-secondary,
+html body .explore-demo,
+html body .schedule-demo{
+  background:var(--kkl-secondary-bg)!important;
+  border-color:var(--kkl-secondary-border)!important;
+  color:var(--kkl-secondary-text)!important;
+}
+html body .btn.ghost:hover,
+html body a.btn.ghost:hover,
+html body .btn.secondary:hover,
+html body .btn-secondary:hover{
+  background:#f3f9fa!important;
+  border-color:#91bac5!important;
+  color:#206d88!important;
+}
+/* Authentication uses the same exact primary color as the clicked dashboard item. */
+html body .auth .btn,
+html body .card #submit{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  border-color:var(--kkl-active-start)!important;
+  color:#fff!important;
+}
+html body .auth .btn:hover,
+html body .card #submit:hover{
+  background:linear-gradient(100deg,var(--kkl-active-hover-start) 0%,var(--kkl-active-hover-end) 100%)!important;
+}
+html body .linkbtn,html body .eyebrow,html body .kicker{color:var(--kkl-secondary-text)!important}
+/* All dark brand panels use the dashboard sidebar gradient. */
+html body .sidebar,
+html body .brand,
+html body .band,
+html body .preview,
+html body .side,
+html body .mock-sidebar,
+html body .preview-sidebar{
+  background:linear-gradient(155deg,var(--kkl-side-top) 0%,var(--kkl-side-mid) 50%,var(--kkl-side-bottom) 100%)!important;
+}
+/* Preview selected row mirrors real dashboard selected row. */
+html body .sideLine.active,
+html body .mock-active,
+html body .preview-active,
+html body .mock-sidebar .active,
+html body .preview-sidebar .active{
+  background:linear-gradient(100deg,var(--kkl-active-start) 0%,var(--kkl-active-end) 100%)!important;
+  box-shadow:inset 4px 0 0 var(--kkl-active-accent)!important;
+}
+/* Selected pricing card uses the same family, without inventing another teal. */
+html body .price.reco,
+html body .plan-card.featured,
+html body .pricing-card.featured{border-color:var(--kkl-active-start)!important}
+</style>
+
+
+<style id="v101-definitive-marketing-color-match">
+:root{
+  --kkl-brand-accent:#2aa3b5;
+  --kkl-brand-accent-hover:#238a9b;
+}
+/* Definitive override: the marketing CTA and workflow numbers use one exact color. */
+html body .hero .actions a.btn.primary,
+html body .hero .btn:first-of-type,
+html body .nav a.btn.primary,
+html body .cta a.btn.primary,
+html body .pricing .price a.btn.primary,
+html body a.btn.primary,
+html body .btn.primary{
+  background:var(--kkl-brand-accent)!important;
+  border-color:var(--kkl-brand-accent)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+html body .hero .actions a.btn.primary:hover,
+html body .hero .btn:first-of-type:hover,
+html body .nav a.btn.primary:hover,
+html body .cta a.btn.primary:hover,
+html body .pricing .price a.btn.primary:hover,
+html body a.btn.primary:hover,
+html body .btn.primary:hover{
+  background:var(--kkl-brand-accent-hover)!important;
+  border-color:var(--kkl-brand-accent-hover)!important;
+}
+html body #workflow .workflow .step .num,
+html body .workflow .num{
+  color:var(--kkl-brand-accent)!important;
+}
+/* Keep both plans visually equal until the user chooses one. */
+html body #pricing .pricing .price,
+html body #pricing .pricing .price.reco{
+  border:1px solid #dfe5ed!important;
+  box-shadow:none!important;
+}
+html body #pricing .pricing .price a.btn.primary{
+  min-width:152px!important;
+  display:inline-flex!important;
+}
+</style>
+<link rel="stylesheet" href="mobile-native.css"></head><body>
+<header class="wrap nav"><a href="/"><img src="kidkeep-logo.png" alt="KidKeep Learn"></a><nav class="navlinks"><a href="#platform">Platform</a><a href="#workflow">How it works</a><a href="#pricing">Pricing</a><a class="btn ghost kkl-action" data-action="signin" href="./signin.html">Sign In</a><a class="btn primary kkl-action" data-action="signup" href="./signin.html?mode=signup">Start Free Trial</a></nav></header>
+<section class="hero"><div class="wrap heroGrid"><div><div class="eyebrow">Childcare management, simplified</div><h1>Run your childcare program with confidence.</h1><p>KidKeep Learn brings attendance, child records, staff scheduling, family communication, billing, compliance, and daily care together in one secure platform.</p><div class="actions"><a class="btn primary kkl-action" data-action="signup" href="./signin.html?mode=signup">Start Free Trial</a><a class="btn ghost kkl-action" data-action="demo" href="./signin.html?demo=1#demo">Explore Demo</a></div><div class="trust"><span>✓ Secure role-based access</span><span>✓ Works across devices</span><span>✓ Built for childcare teams</span></div></div><div class="preview"><div class="screen"><div class="screenTop"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><div class="screenBody"><div class="side"><div class="sideLine active"></div><div class="sideLine"></div><div class="sideLine"></div><div class="sideLine"></div><div class="sideLine"></div><div class="sideLine"></div></div><div class="content"><div class="miniTitle"></div><div class="stats"><div class="stat"></div><div class="stat"></div><div class="stat"></div></div><div class="panel"></div></div></div></div></div></div></section>
+<section id="platform" class="section"><div class="wrap"><div class="sectionHead"><div class="eyebrow">One platform for your entire program</div><h2>Everything you need to manage childcare—without the busywork.</h2><p>Give administrators, staff, and families the tools they need while keeping your program organized, connected, and easy to manage.</p></div><div class="grid3"><div class="feature"><b>Attendance & classrooms</b><p>Manage check-in and check-out, live classroom rosters, room assignments, authorized pickups, and attendance history in real time.</p></div><div class="feature"><b>Daily care & health</b><p>Record meals, naps, diapers, activities, health checks, incidents, and photos, then keep families informed throughout the day.</p></div><div class="feature"><b>Family experience</b><p>Simplify applications and enrollment while giving families secure access to child profiles, documents, announcements, and messages.</p></div><div class="feature"><b>Staff operations</b><p>Manage staff profiles, roles, schedules, classroom assignments, and coverage from one centralized workspace.</p></div><div class="feature"><b>Billing & records</b><p>Create and manage invoices, track payment status and balances, and keep important administrative records organized.</p></div><div class="feature"><b>Compliance & reporting</b><p>Stay ahead of required documents and expirations, maintain incident records, and access clear operational reports.</p></div></div></div></section>
+<section id="workflow" class="section band"><div class="wrap"><div class="sectionHead"><div class="eyebrow">A workflow built for childcare</div><h2>Support every part of the day from one connected platform.</h2><p>Role-based access gives each person the information and tools they need—while protecting sensitive program and family data.</p></div><div class="workflow"><div class="step"><div class="num">01</div><b>Prepare for the day</b><p>Review staffing, classroom coverage, and the day’s schedule.</p></div><div class="step"><div class="num">02</div><b>Welcome & check in</b><p>Record arrivals quickly and keep classroom attendance accurate in real time.</p></div><div class="step"><div class="num">03</div><b>Capture daily care</b><p>Document meals, naps, activities, health updates, and incidents as they happen.</p></div><div class="step"><div class="num">04</div><b>Keep families connected</b><p>Share timely updates, manage pickup, and keep families informed through the end of the day.</p></div></div></div></section>
+<section id="pricing" class="section"><div class="wrap"><div class="sectionHead"><div class="eyebrow">Simple, transparent pricing</div><h2>Choose the plan that fits your childcare program.</h2></div><div class="pricing"><div class="price"><h3>Daycare</h3><div class="amount">$29.99</div><small>per month</small><ul><li>Up to 30 active children</li><li>Up to 10 staff</li><li>Core management and family communication tools</li></ul><a class="btn primary kkl-action" data-action="plan" data-plan="daycare" href="./signin.html?mode=signup&plan=daycare">Choose Daycare</a></div><div class="price"><h3>Center</h3><div class="amount">$79.99</div><small>per month</small><ul><li>Up to 125 active children</li><li>Unlimited staff</li><li>Expanded management and administrative tools</li></ul><a class="btn primary kkl-action" data-action="plan" data-plan="center" href="./signin.html?mode=signup&plan=center">Choose Center</a></div></div></div></section>
+<section class="cta"><div class="wrap ctaBox"><div><h2 style="margin:0 0 8px">Spend less time managing systems. Focus more on your program.</h2><p style="margin:0;color:#667085">Bring your daily operations, staff, families, billing, and records together with KidKeep Learn.</p></div><div class="actions"><a class="btn primary kkl-action" data-action="signup" href="./signin.html?mode=signup">Start Free Trial</a><a class="btn ghost kkl-action" data-action="demo" href="./signin.html?demo=1#demo">Explore Demo</a></div></div></section>
+<footer class="footer"><div class="wrap"><span>© 2026 KidKeep Learn. Childcare operations software.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="signin.html">Sign In</a></span></div></footer>
+<script id="kkl-v102-button-fix">
+(function(){
+  function go(target){ window.location.assign(new URL(target, window.location.href).href); }
+  document.addEventListener('click', function(e){
+    var a=e.target.closest('a.kkl-action');
+    if(!a) return;
+    e.preventDefault();
+    var action=a.dataset.action;
+    if(action==='plan'){
+      var plan=a.dataset.plan||'';
+      try{ localStorage.setItem('kidkeep_selected_plan', plan); }catch(_){}
+      go('./signin.html?mode=signup&plan='+encodeURIComponent(plan));
+      return;
+    }
+    if(action==='signup'){ go('./signin.html?mode=signup'); return; }
+    if(action==='demo'){ go('./signin.html?demo=1#demo'); return; }
+    if(action==='signin'){ go('./signin.html'); return; }
+  });
+})();
+</script>
+</body></html>
+<style id="v89-visual-master">
+:root{--v89-side-top:#173a57;--v89-side-mid:#102f49;--v89-side-bottom:#081e30;--v89-active-a:#238ba2;--v89-active-b:#5aaec0;--v89-accent:#4fd2c3;--v89-cta:#287f9c;--v89-cta-hover:#206d88}
+.btn.primary{background:var(--v89-cta)!important;border-color:var(--v89-cta)!important}.btn.primary:hover{background:var(--v89-cta-hover)!important;border-color:var(--v89-cta-hover)!important}
+.preview{background:linear-gradient(165deg,var(--v89-side-top),var(--v89-side-bottom))!important}.side,.mock-sidebar,.app-preview .sidebar,.product-preview .sidebar,.preview-sidebar{background:linear-gradient(165deg,var(--v89-side-top),var(--v89-side-mid) 50%,var(--v89-side-bottom))!important}.sideLine.active,.mock-sidebar .active,.preview-sidebar .active{background:linear-gradient(100deg,var(--v89-active-a),var(--v89-active-b))!important;box-shadow:inset 3px 0 var(--v89-accent)!important}.band{background:linear-gradient(115deg,var(--v89-side-bottom),var(--v89-side-top))!important}.eyebrow{color:var(--v89-cta)!important}.price.reco{border-color:var(--v89-cta)!important}.ctaBox{background:#f1f7f8!important;border-color:#d6e8eb!important}a{color:var(--v89-cta)}
+
+/* V99 marketing color consistency */
+:root{
+  --kkl-active-start:#238ba2;
+  --kkl-active-end:#5aaec0;
+  --kkl-active-accent:#4fd2c3;
+  --kkl-navy:#102f49;
+}
+.btn.primary{
+  background:linear-gradient(100deg,var(--kkl-active-start),var(--kkl-active-end))!important;
+  border:1px solid #2e8fa5!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+.btn.primary:hover{
+  background:linear-gradient(100deg,#1f7f96,#4d9fb2)!important;
+  border-color:#287f94!important;
+}
+.workflow .num{
+  color:var(--kkl-active-accent)!important;
+  font-weight:900!important;
+}
+.price{border:1px solid #dfe5ed!important;box-shadow:none!important}
+.price.reco{border:1px solid #dfe5ed!important}
+.price .btn.ghost{color:#285d73!important;border-color:#cbd8df!important;background:#fff!important}
+.price .btn.ghost:hover{background:#f4f8fa!important;border-color:#9fb8c3!important}
+</style>
+
+<style id="v100-final-marketing-accent">
+:root{
+  --kkl-dashboard-accent:#2aa3b5;
+  --kkl-dashboard-accent-hover:#238a9b;
+}
+/* One exact accent across marketing CTAs and workflow numbers */
+html body .btn.primary,
+html body a.btn.primary,
+html body .pricing .price .btn.primary{
+  background:var(--kkl-dashboard-accent)!important;
+  border-color:var(--kkl-dashboard-accent)!important;
+  color:#fff!important;
+  box-shadow:none!important;
+}
+html body .btn.primary:hover,
+html body a.btn.primary:hover,
+html body .pricing .price .btn.primary:hover{
+  background:var(--kkl-dashboard-accent-hover)!important;
+  border-color:var(--kkl-dashboard-accent-hover)!important;
+}
+html body .workflow .num{
+  color:var(--kkl-dashboard-accent)!important;
+}
+/* Both plans begin visually equal; only the CTA communicates selection action. */
+html body .pricing .price{
+  border:1px solid #dfe5ed!important;
+  box-shadow:none!important;
+}
+html body .pricing .price .btn{
+  min-width:152px;
+}
+</style>

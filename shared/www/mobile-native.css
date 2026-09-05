@@ -1,0 +1,23 @@
+/* Native mobile shell refinements. Keeps the web feature set while improving phone ergonomics. */
+:root{--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+body{overscroll-behavior-y:none;padding-bottom:var(--safe-bottom)}
+button,a,.btn,.iconBtn,.navBtn,.tab{touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+@media(max-width:760px){
+  input,select,textarea{font-size:16px!important}
+  .topbar{padding-top:var(--safe-top);height:calc(62px + var(--safe-top));flex-basis:calc(62px + var(--safe-top))}
+  .btn,.iconBtn{min-height:44px}
+  .navBtn{min-height:42px;height:auto}
+  .content{padding:20px 14px calc(24px + var(--safe-bottom))!important}
+  .pageHead h2{font-size:24px!important;line-height:1.15}
+  .pageHead p{font-size:13px!important;line-height:1.45}
+  .modal{width:min(94vw,620px)!important;max-height:88vh;overflow:auto}
+  .modalFoot{position:sticky;bottom:0;background:#fff;padding-top:12px}
+  .tableWrap,.attendanceTableWrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .table{min-width:720px}
+  .attendanceCards{grid-template-columns:1fr!important}
+  .attendanceToolbar{flex-wrap:wrap}
+  .attendanceToolbar>*{min-width:0}
+  .quick{grid-template-columns:1fr 1fr!important}
+  .familyHero{padding:18px!important}
+}

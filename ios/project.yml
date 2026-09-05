@@ -1,0 +1,23 @@
+name: KidKeepLearn
+options:
+  bundleIdPrefix: com.kidkeeplearn
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  KidKeepLearn:
+    type: application
+    platform: iOS
+    sources:
+      - path: KidKeepLearn
+        excludes:
+          - Web
+    resources:
+      - path: KidKeepLearn/Web
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.kidkeeplearn.app
+        PRODUCT_NAME: KidKeep Learn
+        INFOPLIST_FILE: KidKeepLearn/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        TARGETED_DEVICE_FAMILY: "1,2"
+        SWIFT_VERSION: "5.0"
